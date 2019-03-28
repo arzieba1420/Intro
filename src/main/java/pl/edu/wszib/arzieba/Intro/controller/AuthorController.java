@@ -5,20 +5,19 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-import pl.edu.wszib.arzieba.Intro.dao.BookDao;
+import pl.edu.wszib.arzieba.Intro.dao.AuthorDao;
 
 @Controller
-@RequestMapping("/books")
-public class BookController {
+@RequestMapping("/authors")
+public class AuthorController {
 
     @Autowired
-    private BookDao bookDao;
+    private AuthorDao authorDao;
 
     @GetMapping
-    public String getBooks(Model model){
-
-        model.addAttribute("haha",bookDao.findAll());
-        return "books";
+    public String getAuthors(Model model){
+        model.addAttribute("allAuthors", authorDao.findAll());
+        return "authors";
     }
+
 }

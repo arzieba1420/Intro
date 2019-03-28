@@ -35,7 +35,7 @@ public class DevBootstrap implements ApplicationListener<ContextRefreshedEvent> 
         publisherDao.save(publisher);
 
         //1st Author
-        Author john = new Author("John","Snow");
+        Author john = new Author("John","Snow2");
         Book testBook1 = new Book("TestBook1","1234",publisher);
         john.getBooks().add(testBook1);
         testBook1.getAuthors().add(john);
